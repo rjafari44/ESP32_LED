@@ -1,30 +1,56 @@
-// ESP32-C3 minimal Serial + LED test
-
-// Onboard LED pin (usually GPIO 2 on WeAct ESP32-C3)
-#define LED_PIN 4
+#include "myheader.h"
 
 void setup() {
-  // Initialize serial at 115200 baud
-  Serial.begin(115200);
-
-  // Wait for USB CDC to initialize
-  delay(2000);
-
-  Serial.println("=== ESP32-C3 Serial Test ===");
-  Serial.println("Serial output is working!");
-  
-  // Initialize LED pin
-  pinMode(LED_PIN, OUTPUT);
+    Serial.begin(115200);
+    delay(1000);
 }
 
 void loop() {
-  // Turn LED on
-  digitalWrite(LED_PIN, HIGH);
-  Serial.println("LED ON");
-  delay(500);
+    switch(currentMode) {
+        case MENU: {
+            if (!menuDisplayed) {
+                showMenu();
+                menuDisplayed = true;
+            }
 
-  // Turn LED off
-  digitalWrite(LED_PIN, LOW);
-  Serial.println("LED OFF brrrrr");
-  delay(500);
+            getUserInput();
+            break;
+        }
+        
+        case BLINK: {
+            if (!modeInitialized[0]) {
+                blink_setup();
+                modeInitialized[0] = true;
+            }
+
+            blink_loop();
+            break;
+        }
+
+        case DIM_BASIC: {
+            if (!modeInitialized[1]) {
+                // dimLED_setup();
+                modeInitialized[1] = true;
+            }
+
+            // dimLED_loop();
+            break;
+        }
+
+        case DIM_RGB: {
+            if (!modeInitialized[2]) {
+                // dimRGB_setup();
+                modeInitialized[2] = true;
+            }
+
+            // dimRGB_loop();
+            break;
+        }
+
+        default: {
+            currentMode = 0;
+            menuDisplayed = false;
+            break;
+        }
+    }
 }

@@ -1,0 +1,24 @@
+#ifndef HEADER_H
+#define HEADER_H
+
+#include<Arduino.h>
+
+inline int currentMode = {};
+inline bool menuDisplayed {false};
+inline bool modeInitialized[3] {false, false, false};
+
+enum menu { MENU, BLINK, DIM_BASIC, DIM_RGB};
+
+void showMenu();
+void getUserInput();
+
+void blink_setup();
+void blink_loop();
+
+// void dimLED_setup();
+// void dimLED_loop();
+
+// void dimRGB_setup();
+// void dimRGB_loop();
+
+#endif HEADER_H
