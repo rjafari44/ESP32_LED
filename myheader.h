@@ -1,7 +1,4 @@
-#ifndef HEADER_H
-#define HEADER_H
-
-#include<Arduino.h>
+#pragma once
 
 inline int currentMode{};
 inline bool menuDisplayed{false};
@@ -20,5 +17,3 @@ void dimLED_loop();
 
 void dimRGB_setup();
 void dimRGB_loop();
-
-#endif HEADER_H

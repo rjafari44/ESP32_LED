@@ -1,4 +1,5 @@
 #include "myheader.h"
+#include<Arduino.h>
 
 void showMenu() {
         Serial.println("\n***** MODE MENU SYSTEM *****\n");
