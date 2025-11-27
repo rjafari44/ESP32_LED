@@ -19,13 +19,17 @@ If using the Arduino IDE, ensure the correct board, the WeAct Studio esp32c3 boa
 If running the script in CLI, it will prompt you for your board's serial port it is connected to, so you need to find it and mention it.
 
 #### Find Connected Serial Port
-1. On Linux
-'''bash
+##### On Linux
+```bash
 ls /dev/tty*
-'''
+```   
 
-2. Using Arduino-CLI
+##### With Arduino CLI (recommended method)
+```bash
 arduino-cli board list
+```
 
-#### Run the program in CLI (Bash)
+#### Run the program in CLI
+```bash
 ./run.sh
+```
