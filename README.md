@@ -40,7 +40,7 @@ If running the script in CLI, it will prompt you for your board's serial port th
 
 If you prefer a manual/edited compilation and upload, either edit my shell script or simply copy them one at a time with custom flags.
 
-### Find Connected Serial Port
+### 1. Find Connected Serial Port
 #### On Linux
 ```bash
 ls /dev/tty*
@@ -51,7 +51,7 @@ ls /dev/tty*
 arduino-cli board list
 ```
 
-### Run the program in CLI
+### 2. Run the program in CLI
 ```bash
 ./run.sh
 ```
