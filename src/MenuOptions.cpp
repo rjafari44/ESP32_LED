@@ -31,7 +31,7 @@ void getUserInput() {
             case '2': {                   // if user chooses the basic dimmer mode, set to 2 because ASCII is 50
                 currentMode = DIM_BASIC;  // set the current selected mode to basic dimmer (ASCII is 50)
                 menuDisplayed = false;    // mark the menu as not displayed for redisplay
-                break;c
+                break;
             }
             case '3': {                   // if the user chooses the RGB dimmer mode, set to 3 because ASCII is 51
                 currentMode = DIM_RGB;    // set the current selected mode to RGB dimmer (ASCII is 51)
