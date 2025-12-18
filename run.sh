@@ -7,8 +7,8 @@ read -p "Enter your ESP32 Port (e.g., /dev/ttyACM0): " PORT
 arduino-cli compile --fqbn esp32:esp32:esp32c3:CDCOnBoot=cdc --build-property "compiler.cpp.extra_flags=-Iinclude" ESP32_LED.ino
 
 # Upload the code to the board
-arduino-cli upload -p /dev/ttyACM0 --fqbn esp32:esp32:esp32c3
+arduino-cli upload -p $PORT --fqbn esp32:esp32:esp32c3
 
 # Open the Serial Monitor at baudrate of 115200 for user input
-arduino-cli monitor -p /dev/ttyACM0 --config baudrate=115200
+arduino-cli monitor -p $PORT --config baudrate=115200
 
